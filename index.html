@@ -93,11 +93,10 @@
   <div class="step-indicator">
     <span>Step 1</span><span>Step 2</span><span>Step 3</span><span>Step 4</span>
   </div>
-  <div class="progress-bar">
-    <div class="progress" id="progress"></div>
-  </div>
+  <div class="progress-bar"><div class="progress" id="progress"></div></div>
 
   <form id="talentForm">
+    <!-- STEP 1 -->
     <div class="step active">
       <label>Nama <input name="nama" required></label>
       <label>Agama
@@ -112,57 +111,25 @@
           <option>Laki-Laki</option><option>Perempuan</option>
         </select>
       </label>
-      <label>Whatsapp <input name="whatsapp" type="number" required></label>
+      <label>Whatsapp <input name="whatsapp" type="tel" required></label>
       <label>Email <input name="email" type="email" required></label>
       <label>Tempat Lahir <input name="tempatLahir" required></label>
       <label>Tanggal Lahir <input name="tanggalLahir" type="date" required></label>
     </div>
 
+    <!-- STEP 2 -->
     <div class="step">
       <label>Alamat Saat ini <textarea name="alamat" required></textarea></label>
       <label>Kota Domisili <input name="kota" required></label>
       <label>Provinsi
         <select name="provinsi" required>
           <option disabled selected value="">Pilih Provinsi</option>
-            <option value="">-- Pilih Provinsi --</option>
-            <option value="Aceh">Aceh</option>
-            <option value="Sumatera Utara">Sumatera Utara</option>
-            <option value="Sumatera Barat">Sumatera Barat</option>
-            <option value="Riau">Riau</option>
-            <option value="Kepulauan Riau">Kepulauan Riau</option>
-            <option value="Jambi">Jambi</option>
-            <option value="Sumatera Selatan">Sumatera Selatan</option>
-            <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
-            <option value="Bengkulu">Bengkulu</option>
-            <option value="Lampung">Lampung</option>
-            <option value="DKI Jakarta">DKI Jakarta</option>
-            <option value="Jawa Barat">Jawa Barat</option>
-            <option value="Banten">Banten</option>
-            <option value="Jawa Tengah">Jawa Tengah</option>
-            <option value="DI Yogyakarta">DI Yogyakarta</option>
-            <option value="Jawa Timur">Jawa Timur</option>
-            <option value="Bali">Bali</option>
-            <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
-            <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
-            <option value="Kalimantan Barat">Kalimantan Barat</option>
-            <option value="Kalimantan Tengah">Kalimantan Tengah</option>
-            <option value="Kalimantan Selatan">Kalimantan Selatan</option>
-            <option value="Kalimantan Timur">Kalimantan Timur</option>
-            <option value="Kalimantan Utara">Kalimantan Utara</option>
-            <option value="Sulawesi Utara">Sulawesi Utara</option>
-            <option value="Gorontalo">Gorontalo</option>
-            <option value="Sulawesi Tengah">Sulawesi Tengah</option>
-            <option value="Sulawesi Barat">Sulawesi Barat</option>
-            <option value="Sulawesi Selatan">Sulawesi Selatan</option>
-            <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-            <option value="Maluku">Maluku</option>
-            <option value="Maluku Utara">Maluku Utara</option>
-            <option value="Papua">Papua</option>
-            <option value="Papua Barat">Papua Barat</option>
-            <option value="Papua Selatan">Papua Selatan</option>
-            <option value="Papua Tengah">Papua Tengah</option>
-            <option value="Papua Pegunungan">Papua Pegunungan</option>
-            <option value="Papua Barat Daya">Papua Barat Daya</option>
+          <option value="DKI Jakarta">DKI Jakarta</option>
+          <option value="Jawa Barat">Jawa Barat</option>
+          <option value="Jawa Timur">Jawa Timur</option>
+          <option value="Bali">Bali</option>
+          <option value="Sumatera Utara">Sumatera Utara</option>
+          <!-- Tambahkan lainnya sesuai kebutuhan -->
         </select>
       </label>
       <label>Pendidikan
@@ -174,6 +141,7 @@
       <label>Nama Universitas <textarea name="Universitas" required></textarea></label>
     </div>
 
+    <!-- STEP 3 -->
     <div class="step">
       <label>Posisi Terakhir <input name="posisiTerakhir" required></label>
       <label>Nama Perusahaan <input name="namaPerusahaan" required></label>
@@ -186,58 +154,32 @@
       <label>Industri Pekerjaan Terakhir
         <select name="industri" required>
           <option disabled selected value="">Pilih Industri</option>
-                  <option value="Manufaktur">Manufaktur</option>
-                  <option value="Otomotif">Otomotif</option>
-                  <option value="Elektronik">Elektronik</option>
-                  <option value="Tekstil dan garmen">Tekstil dan garmen</option>
-                  <option value="Makanan dan minuman">Makanan dan minuman</option>
-                  <option value="Kimia dan farmasi">Kimia dan farmasi</option>
-                  <option value="Pertambangan">Pertambangan</option>
-                  <option value="Minyak dan gas">Minyak dan gas</option>
-                  <option value="Batu bara">Batu bara</option>
-                  <option value="Logam dan mineral">Logam dan mineral</option>
-                  <option value="Energi terbarukan">Energi terbarukan</option>
-                  <option value="Perbankan">Perbankan</option>
-                  <option value="Asuransi">Asuransi</option>
-                  <option value="Teknologi finansial">Teknologi finansial (fintech)</option>
-                  <option value="E-commerce">E-commerce</option>
-                  <option value="Perangkat lunak dan teknologi digital">Perangkat lunak dan teknologi digital</option>
-                  <option value="Konstruksi">Konstruksi</option>
-                  <option value="Properti dan real estat">Properti dan real estat</option>
-                  <option value="Agribisnis">Agribisnis</option>
-                  <option value="Perkebunan">Perkebunan</option>
-                  <option value="Peternakan dan perikanan">Peternakan dan perikanan</option>
-                  <option value="Telekomunikasi">Telekomunikasi</option>
-                  <option value="Jaringan dan infrastruktur IT">Jaringan dan infrastruktur IT</option>
-                  <option value="Transportasi">Transportasi</option>
-                  <option value="Logistik dan pengiriman">Logistik dan pengiriman</option>
-                  <option value="Pariwisata">Pariwisata</option>
-                  <option value="Perhotelan dan hospitality">Perhotelan dan hospitality</option>
-                  <option value="Pendidikan berbasis teknologi">Pendidikan berbasis teknologi</option>
-                  <option value="Media dan hiburan">Media dan hiburan</option>
-                  <option value="Kreatif dan desain">Kreatif dan desain</option>
+          <option>Manufaktur</option><option>Otomotif</option><option>Perbankan</option><option>IT</option>
         </select>
       </label>
     </div>
 
+    <!-- STEP 4 -->
     <div class="step">
       <label>Gaji Saat ini <input name="gajiSaatIni" required></label>
       <label>Harapan Gaji <input name="harapanGaji" required></label>
-      <label>Posisi DiLamar
+      <label>Posisi Dilamar
         <select name="posisiDilamar" required>
           <option disabled selected value="">Pilih Posisi</option>
-          <option>Direktur Operasional - Coal Mining</option><option>Project Manager - Coal Mining</option><option>Admin Finance & Budget Control - Mining Services</option><option>HRGA Superintendent - Mining Services</option><option>Freelance Reruiter - EP Team</option><option>Freelance Account Executive - EP Team</option>
+          <option>Direktur Operasional-Coal Mining</option><option>Project Manager-Coal Mining</option><option>Freelance Recruiter - EPTeam</option>
+          <option>Finance Officer - Mining Service</option><option>Admin Budgeting Control - Mining Service</option><option>Direktur Operasional-Hospitality</option>
         </select>
       </label>
       <label>Kesediaan Join
         <select name="kesediaanJoin" required>
           <option disabled selected value="">Pilih Kesediaan</option>
-          <option>Secepatnya</option><option>1 Minggu</option><option>2 Minggu</option><option>1 Bulan</option>
+          <option>Secepatnya</option><option>1 Minggu</option><option>1 Bulan</option>
         </select>
       </label>
       <label>Upload CV <input type="file" name="cvFile" id="cvFile" accept=".pdf,.doc,.docx" required /></label>
     </div>
 
+    <!-- Buttons -->
     <div class="btn-group">
       <button type="button" onclick="nextStep(-1)">Back</button>
       <button type="button" onclick="nextStep(1)">Next</button>
@@ -245,12 +187,14 @@
     </div>
   </form>
 
+  <!-- Success Message -->
   <div id="successMessage" style="display:none; background:#d4edda; color:#155724; padding:15px; margin-top:20px; border:1px solid #c3e6cb; border-radius:8px; text-align:center; transition:opacity 0.5s ease; opacity:1;">
     Form berhasil dikirim. Terima kasih!
   </div>
 
-  <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; animation:fadeIn 0.3s ease;">
-    <div style="background:#fff; padding:30px; border-radius:12px; max-width:400px; margin:120px auto; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2); animation:slideIn 0.3s ease;">
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
+    <div style="background:#fff; padding:30px; border-radius:12px; max-width:400px; margin:120px auto; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
       <h3 style="margin-bottom: 20px; color: #333">Konfirmasi Pengiriman</h3>
       <p style="margin-bottom: 30px;">Apakah Anda yakin ingin mengirim formulir ini?</p>
       <button onclick="submitConfirmed(true)" style="padding:10px 20px; border:none; border-radius:8px; background-color:#4CAF50; color:white; margin-right:10px; cursor:pointer;">Ya</button>
@@ -287,9 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateProgress() {
-  if (progress && steps.length > 0) {
-    progress.style.width = ((currentStep + 1) / steps.length * 100) + '%';
-  }
+  progress.style.width = ((currentStep + 1) / steps.length * 100) + '%';
 }
 
 function nextStep(direction) {
@@ -305,13 +247,24 @@ function nextStep(direction) {
 }
 
 const form = document.getElementById('talentForm');
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!isSubmitting) {
     document.getElementById("confirmModal").style.display = "block";
     return;
   }
-  isSubmitting = false;
+  handleFormSubmission();
+});
+
+function submitConfirmed(confirm) {
+  document.getElementById("confirmModal").style.display = "none";
+  if (confirm) {
+    isSubmitting = true;
+    handleFormSubmission();
+  }
+}
+
+function handleFormSubmission() {
   const fileInput = document.getElementById('cvFile');
   const file = fileInput?.files[0];
   if (!file) return alert("Silakan upload file CV terlebih dahulu.");
@@ -326,24 +279,16 @@ form.addEventListener('submit', async (e) => {
     google.script.run.withSuccessHandler(() => {
       showSuccessMessage();
       form.reset();
-      steps[currentStep].classList.remove('active');
       currentStep = 0;
-      steps[currentStep].classList.add('active');
+      steps.forEach((step, idx) => step.classList.toggle('active', idx === currentStep));
       backBtn.style.display = 'none';
       nextBtn.style.display = 'inline-block';
       submitBtn.style.display = 'none';
       updateProgress();
+      isSubmitting = false;
     }).uploadFile(payload);
   };
   reader.readAsDataURL(file);
-});
-
-function submitConfirmed(confirm) {
-  document.getElementById("confirmModal").style.display = "none";
-  if (confirm) {
-    isSubmitting = true;
-    form.dispatchEvent(new Event("submit"));
-  }
 }
 
 function showSuccessMessage() {

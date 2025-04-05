@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+    }
+    h1 { margin-bottom: 4px; }
+    .subtitle {
+      font-size: 10px;
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress {
+      height: 100%;
+      width: 0%;
+      background-color: #4CAF50;
+      transition: width 0.3s ease;
+    }
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+    }
+    .step { display: none; animation: fadeIn 0.5s; }
+    .step.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 999px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    select:invalid { color: #999; }
+    button {
+      margin-top: 30px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 999px;
+      background-color: #90EE90;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background-color: #66cc66; }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    @media (max-width: 600px) {
+      .btn-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>EPHunter Form</h1>
+  <div class="subtitle">Formulir pendaftaran Talent EPHunter</div>
+  <div class="step-indicator">
+    <span>Step 1</span><span>Step 2</span><span>Step 3</span><span>Step 4</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <form id="talentForm">
+    <!-- Step 1 -->
+    <div class="step active">
+      <label>Nama <input name="nama" required></label>
+      <label>Agama
+        <select name="agama" required>
+          <option disabled selected value="">Pilih Agama</option>
+          <option>Islam</option><option>Katolik</option><option>Protestan</option><option>Budhha</option><option>Hindu</option><option>Konghucu</option>
+        </select>
+       <label>Gender
+        <select name="gender" required>
+          <option disabled selected value="">Pilih Gender</option>
+          <option>Laki-Laki</option><option>Perempuan</option>
+        </select>
+      <label>Whatsapp <input name="whatsapp" type="number" required></label>
+      <label>Email <input name="email" type="email" required></label>
+      <label>Tempat Lahir <input name="tempatLahir" required></label>
+      <label>Tanggal Lahir <input name="tanggalLahir" type="date" required></label>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      </label>
+      <label>Alamat Saat ini <textarea name="alamat" required></textarea></label>
+      <label>Kota Domisili <input name="kota" required></label>
+      <label>Provinsi
+        <select name="provinsi" required>
+          <option disabled selected value="">Pilih Provinsi</option>
+          <option>Nanggroe Aceh Darussalam</option><option>Sumatera Utara</option><option>Sumatera Selatan</option><option>Sumatera Barat</option>
+          <option>Bengkulu</option><option>Riau</option><option>Kepulauan Riau</option><option>Jambi</option><option>Lampung</option>
+          <option>Bangka Belitung</option><option>Kalimantan Barat</option><option>Kalimantan Timur</option><option>Kalimantan Selatan</option><option>Kalimantan Tengah</option><option>Kalimantan Utara</option><option>Banten</option><option>DKI Jakarta</option><option>Jawa Barat</option><option>Jawa Tengah</option><option>Daerah Istimewa Yogyakarta</option><option>Bali</option><option>Nusa Tenggara Timur</option><option>Nusa Tenggara Barat</option><option>Gorontalo</option><option>Sulawesi Barat</option><option>Sulawesi Tengah</option><option>Sulawesi Utara</option><option>Sulawesi Tenggara</option><option>Sulawesi Selatan</option><option>Maluku</option><option>Maluku Utara</option><option>Papua</option>
+        </select>
+      </label>
+      <label>Pendidikan
+        <select name="pendidikan" required>
+          <option disabled selected value="">Pilih Pendidikan</option>
+          <option>SMA/SMK</option><option>Diploma</option><option>Sarjana</option><option>Magister</option><option>Doktor</option>
+        </select>
+      </label>
+      <label>Nama Universitas <textarea name="Universitas" required></textarea></label>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <label>Posisi Terakhir <input name="posisiTerakhir" required></label>
+      <label>Nama Perusahaan <input name="namaPerusahaan" required></label>
+      <label>Level Posisi
+        <select name="levelPosisi" required>
+          <option disabled selected value="">Pilih Level</option>
+          <option>Blue Collar</option><option>Junior Staff</option><option>Officer</option><option>Supervisor</option><option>Ast Manager</option><option>Manager</option><option>Senior Manager</option><option>C-Level</option>
+        </select>
+      </label>
+      <label>Industri Pekerjaan Terakhir
+        <select name="industri" required>
+          <option disabled selected value="">Pilih Industri</option>
+          <option>Asuransi</option><option>Energi dan Kelistrikan</option><option>Kesehatan dan Farmasi</option><option>Konstruksi dan Properti</option><option>Makanan dan Minuman (F&B)</option><option>Manufaktur dan Logistic</option><option>Media dan Hiburan</option><option>Migas</option><option>Pariwisata dan Perhotelan</option><option>Pendidikan</option><option>Perbankan dan Multifinance</option><option>Ritel</option><option>Perikanan</option><option>Pertambangan</option><option>Pertanian</option><option>Peternakan</option><option>Recruitment Consultant</option><option>Outsourcing</option><option>Telekomunikasi</option><option>Transportasi</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <label>Gaji Saat ini <input name="gajiSaatIni" required></label>
+      <label>Harapan Gaji <input name="harapanGaji" required></label>
+      <script>
+        function formatNumberWithDots(value) {
+            return value.replace(/\D/g, '')  // Remove non-digits
+                .replace(/\B(?=(\d{3})+(?!\d))/g, '.');  // Add dot every 3 digits
+        }
+
+        function attachFormatter(inputName) {
+            const input = document.querySelector(`input[name="${inputName}"]`);
+            input.addEventListener('blur', () => {
+              input.value = formatNumberWithDots(input.value);
+            });
+        }
+
+  attachFormatter('gajiSaatIni');
+  attachFormatter('harapanGaji');
+</script>
+      <label>Posisi DiLamar
+        <select name="posisiDilamar" required>
+          <option disabled selected value="">Pilih Posisi</option>
+          <option>Direktur Operasional - Coal Mining</option><option>Project Manager - Coal Mining</option><option>Admin Finance & Budgeting - Mining Services</option><option>Mine Plan Supervisor</option><option>HSE Supervisor - Coal Mining</option><option>Geologi - Coal Mining</option><option>Superintendent HSE - Coal Mining</option><option>Supervisor Fuel - Coal Mining</option><option>Supervisor Production - Coal Mining</option><option>Superintendent Production - Coal Mining</option>
+        </select>
+      <label>Kesediaan Join
+        <select name="kesediaanJoin" required>
+          <option disabled selected value="">Pilih Kesediaan</option>
+          <option>Secepatnya</option><option>1 Minggu</option><option>2 Minggu</option><option>1 Bulan</option>
+        </select>
+      </label>
+      <label>Upload CV <input type="file" name="cvFile" id="cvFile" accept=".pdf,.doc,.docx" required /></label>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" onclick="nextStep(-1)">Back</button>
+      <button type="button" onclick="nextStep(1)">Next</button>
+      <button type="submit" style="display:none">Kirim</button>
+    </div>
+  </form>
+
+  <!-- Pesan sukses -->
+  <div id="successMessage" style="
+  display:none; 
+  background:#d4edda; 
+  color:#155724; 
+  padding:15px; 
+  margin-top:20px; 
+  border:1px solid #c3e6cb; 
+  border-radius:8px; 
+  text-align:center; 
+  transition:opacity 0.5s ease; 
+  opacity:1;">
+    Form berhasil dikirim. Terima kasih!
+  </div>
+
+  <!-- Modal konfirmasi -->
+  <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; animation:fadeIn 0.3s ease;">
+    <div style="background:#fff; padding:30px; border-radius:12px; max-width:400px; margin:120px auto; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2); animation:slideIn 0.3s ease;">
+      <h3 style="margin-bottom: 20px; color: #333">Konfirmasi Pengiriman</h3>
+      <p style="margin-bottom: 30px;">Apakah Anda yakin ingin mengirim formulir ini?</p>
+      <button onclick="submitConfirmed(true)" style="padding:10px 20px; border:none; border-radius:8px; background-color:#4CAF50; color:white; margin-right:10px; cursor:pointer;">Ya</button>
+      <button onclick="submitConfirmed(false)" style="padding:10px 20px; border:none; border-radius:8px; background-color:#ccc; color:#333; cursor:pointer;">Batal</button>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<script>
+let currentStep = 0, steps, progress, nextBtn, backBtn, submitBtn, isSubmitting = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  steps = document.querySelectorAll('.step');
+  progress = document.getElementById('progress');
+  nextBtn = document.querySelector('button[onclick="nextStep(1)"]');
+  backBtn = document.querySelector('button[onclick="nextStep(-1)"]');
+  submitBtn = document.querySelector('form button[type="submit"]');
+  steps[0].classList.add('active');
+  backBtn.style.display = 'none';
+  updateProgress();
+});
+
+function updateProgress() {
+  if (progress && steps.length > 0) {
+    progress.style.width = ((currentStep + 1) / steps.length * 100) + '%';
+  }
+}
+
+function nextStep(direction) {
+  if (!steps || steps.length === 0) return;
+  steps[currentStep].classList.remove('active');
+  currentStep += direction;
+  currentStep = Math.max(0, Math.min(currentStep, steps.length - 1));
+  steps[currentStep].classList.add('active');
+  backBtn.style.display = currentStep === 0 ? 'none' : 'inline-block';
+  nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-block';
+  submitBtn.style.display = currentStep === steps.length - 1 ? 'inline-block' : 'none';
+  updateProgress();
+}
+
+const form = document.getElementById('talentForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!isSubmitting) {
+    document.getElementById("confirmModal").style.display = "block";
+    return;
+  }
+  isSubmitting = false;
+  const fileInput = document.getElementById('cvFile');
+  const file = fileInput?.files[0];
+  if (!file) return alert("Silakan upload file CV terlebih dahulu.");
+
+  const reader = new FileReader();
+  reader.onloadend = function () {
+    const base64 = reader.result.split(',')[1];
+    const formData = Object.fromEntries(new FormData(form).entries());
+    delete formData.cvFile;
+
+    const payload = { ...formData, filename: file.name, mimeType: file.type, fileData: base64 };
+
+    google.script.run.withSuccessHandler(() => {
+      showSuccessMessage();
+      form.reset();
+      steps[currentStep].classList.remove('active');
+      currentStep = 0;
+      steps[currentStep].classList.add('active');
+      backBtn.style.display = 'none';
+      nextBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'none';
+      updateProgress();
+    }).uploadFile(payload);
+  };
+  reader.readAsDataURL(file);
+});
+
+function submitConfirmed(confirm) {
+  document.getElementById("confirmModal").style.display = "none";
+  if (confirm) {
+    isSubmitting = true;
+    form.dispatchEvent(new Event("submit"));
+  }
+}
+
+function showSuccessMessage() {
+  const msg = document.getElementById('successMessage');
+  msg.style.display = 'block';
+  msg.style.opacity = '1';
+  setTimeout(() => {
+    msg.style.opacity = '0';
+    setTimeout(() => { msg.style.display = 'none'; }, 500);
+  }, 4000);
+}
+</script>
+</body>
+</html>

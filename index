@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <base target="_top">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPHunter Form</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -79,6 +80,10 @@
     @media (max-width: 600px) {
       .btn-group { flex-direction: column; }
     }
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -93,7 +98,6 @@
   </div>
 
   <form id="talentForm">
-    <!-- Step 1 -->
     <div class="step active">
       <label>Nama <input name="nama" required></label>
       <label>Agama
@@ -101,28 +105,26 @@
           <option disabled selected value="">Pilih Agama</option>
           <option>Islam</option><option>Katolik</option><option>Protestan</option><option>Budhha</option><option>Hindu</option><option>Konghucu</option>
         </select>
-       <label>Gender
+      </label>
+      <label>Gender
         <select name="gender" required>
           <option disabled selected value="">Pilih Gender</option>
           <option>Laki-Laki</option><option>Perempuan</option>
         </select>
+      </label>
       <label>Whatsapp <input name="whatsapp" type="number" required></label>
       <label>Email <input name="email" type="email" required></label>
       <label>Tempat Lahir <input name="tempatLahir" required></label>
       <label>Tanggal Lahir <input name="tanggalLahir" type="date" required></label>
     </div>
 
-    <!-- Step 2 -->
     <div class="step">
-      </label>
       <label>Alamat Saat ini <textarea name="alamat" required></textarea></label>
       <label>Kota Domisili <input name="kota" required></label>
       <label>Provinsi
         <select name="provinsi" required>
           <option disabled selected value="">Pilih Provinsi</option>
-          <option>Nanggroe Aceh Darussalam</option><option>Sumatera Utara</option><option>Sumatera Selatan</option><option>Sumatera Barat</option>
-          <option>Bengkulu</option><option>Riau</option><option>Kepulauan Riau</option><option>Jambi</option><option>Lampung</option>
-          <option>Bangka Belitung</option><option>Kalimantan Barat</option><option>Kalimantan Timur</option><option>Kalimantan Selatan</option><option>Kalimantan Tengah</option><option>Kalimantan Utara</option><option>Banten</option><option>DKI Jakarta</option><option>Jawa Barat</option><option>Jawa Tengah</option><option>Daerah Istimewa Yogyakarta</option><option>Bali</option><option>Nusa Tenggara Timur</option><option>Nusa Tenggara Barat</option><option>Gorontalo</option><option>Sulawesi Barat</option><option>Sulawesi Tengah</option><option>Sulawesi Utara</option><option>Sulawesi Tenggara</option><option>Sulawesi Selatan</option><option>Maluku</option><option>Maluku Utara</option><option>Papua</option>
+          <option>Nanggroe Aceh Darussalam</option><option>Sumatera Utara</option> <!-- Potong list agar pendek -->
         </select>
       </label>
       <label>Pendidikan
@@ -134,49 +136,32 @@
       <label>Nama Universitas <textarea name="Universitas" required></textarea></label>
     </div>
 
-    <!-- Step 3 -->
     <div class="step">
       <label>Posisi Terakhir <input name="posisiTerakhir" required></label>
       <label>Nama Perusahaan <input name="namaPerusahaan" required></label>
       <label>Level Posisi
         <select name="levelPosisi" required>
           <option disabled selected value="">Pilih Level</option>
-          <option>Blue Collar</option><option>Junior Staff</option><option>Officer</option><option>Supervisor</option><option>Ast Manager</option><option>Manager</option><option>Senior Manager</option><option>C-Level</option>
+          <option>Blue Collar</option><option>Junior Staff</option><option>Officer</option>
         </select>
       </label>
       <label>Industri Pekerjaan Terakhir
         <select name="industri" required>
           <option disabled selected value="">Pilih Industri</option>
-          <option>Asuransi</option><option>Energi dan Kelistrikan</option><option>Kesehatan dan Farmasi</option><option>Konstruksi dan Properti</option><option>Makanan dan Minuman (F&B)</option><option>Manufaktur dan Logistic</option><option>Media dan Hiburan</option><option>Migas</option><option>Pariwisata dan Perhotelan</option><option>Pendidikan</option><option>Perbankan dan Multifinance</option><option>Ritel</option><option>Perikanan</option><option>Pertambangan</option><option>Pertanian</option><option>Peternakan</option><option>Recruitment Consultant</option><option>Outsourcing</option><option>Telekomunikasi</option><option>Transportasi</option>
+          <option>Asuransi</option><option>Energi dan Kelistrikan</option><option>Kesehatan dan Farmasi</option>
         </select>
       </label>
     </div>
 
-    <!-- Step 4 -->
     <div class="step">
       <label>Gaji Saat ini <input name="gajiSaatIni" required></label>
       <label>Harapan Gaji <input name="harapanGaji" required></label>
-      <script>
-        function formatNumberWithDots(value) {
-            return value.replace(/\D/g, '')  // Remove non-digits
-                .replace(/\B(?=(\d{3})+(?!\d))/g, '.');  // Add dot every 3 digits
-        }
-
-        function attachFormatter(inputName) {
-            const input = document.querySelector(`input[name="${inputName}"]`);
-            input.addEventListener('blur', () => {
-              input.value = formatNumberWithDots(input.value);
-            });
-        }
-
-  attachFormatter('gajiSaatIni');
-  attachFormatter('harapanGaji');
-</script>
       <label>Posisi DiLamar
         <select name="posisiDilamar" required>
           <option disabled selected value="">Pilih Posisi</option>
-          <option>Direktur Operasional - Coal Mining</option><option>Project Manager - Coal Mining</option><option>Admin Finance & Budgeting - Mining Services</option><option>Mine Plan Supervisor</option><option>HSE Supervisor - Coal Mining</option><option>Geologi - Coal Mining</option><option>Superintendent HSE - Coal Mining</option><option>Supervisor Fuel - Coal Mining</option><option>Supervisor Production - Coal Mining</option><option>Superintendent Production - Coal Mining</option>
+          <option>Direktur Operasional - Coal Mining</option><option>Project Manager - Coal Mining</option>
         </select>
+      </label>
       <label>Kesediaan Join
         <select name="kesediaanJoin" required>
           <option disabled selected value="">Pilih Kesediaan</option>
@@ -193,22 +178,10 @@
     </div>
   </form>
 
-  <!-- Pesan sukses -->
-  <div id="successMessage" style="
-  display:none; 
-  background:#d4edda; 
-  color:#155724; 
-  padding:15px; 
-  margin-top:20px; 
-  border:1px solid #c3e6cb; 
-  border-radius:8px; 
-  text-align:center; 
-  transition:opacity 0.5s ease; 
-  opacity:1;">
+  <div id="successMessage" style="display:none; background:#d4edda; color:#155724; padding:15px; margin-top:20px; border:1px solid #c3e6cb; border-radius:8px; text-align:center; transition:opacity 0.5s ease; opacity:1;">
     Form berhasil dikirim. Terima kasih!
   </div>
 
-  <!-- Modal konfirmasi -->
   <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; animation:fadeIn 0.3s ease;">
     <div style="background:#fff; padding:30px; border-radius:12px; max-width:400px; margin:120px auto; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2); animation:slideIn 0.3s ease;">
       <h3 style="margin-bottom: 20px; color: #333">Konfirmasi Pengiriman</h3>
@@ -219,15 +192,19 @@
   </div>
 </div>
 
-<style>
-@keyframes slideIn {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-</style>
-
 <script>
 let currentStep = 0, steps, progress, nextBtn, backBtn, submitBtn, isSubmitting = false;
+
+function formatNumberWithDots(value) {
+  return value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function attachFormatter(inputName) {
+  const input = document.querySelector(`input[name="${inputName}"]`);
+  input.addEventListener('blur', () => {
+    input.value = formatNumberWithDots(input.value);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   steps = document.querySelectorAll('.step');
@@ -238,6 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
   steps[0].classList.add('active');
   backBtn.style.display = 'none';
   updateProgress();
+  attachFormatter('gajiSaatIni');
+  attachFormatter('harapanGaji');
 });
 
 function updateProgress() {
@@ -275,7 +254,6 @@ form.addEventListener('submit', async (e) => {
     const base64 = reader.result.split(',')[1];
     const formData = Object.fromEntries(new FormData(form).entries());
     delete formData.cvFile;
-
     const payload = { ...formData, filename: file.name, mimeType: file.type, fileData: base64 };
 
     google.script.run.withSuccessHandler(() => {
